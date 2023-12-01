@@ -35,9 +35,6 @@ public class enemyAI : MonoBehaviour
                 // Handle reaching the end of the path (optional)
             }
         }
-        else
-        {
-            print("jd");
-        }
+        
     }
 }
