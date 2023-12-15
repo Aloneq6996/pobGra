@@ -12,8 +12,6 @@ public class enemyAI : MonoBehaviour
     private string checkPoint;
     public bool isLast;
 
-    public float enemyLife;
-
     void Start()
     {
 
@@ -38,9 +36,5 @@ public class enemyAI : MonoBehaviour
                 SceneManager.LoadScene("winPage");
             }
         }
-    }
-
-    public void decreaseLifeEnemy(int dmg){
-        enemyLife -= dmg;
     }
 }
