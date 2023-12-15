@@ -1,16 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class enemyAI : MonoBehaviour
 {
-    public int numOfCheckpoints;
-    private Rigidbody2D rb;
+    public int currCheckpoint = 0;
     public float speed;
-    private int CurrCheckpoint = 0;
-    private string checkPoint;
-    public bool isLast;
 
     void Start()
     {
@@ -19,22 +13,26 @@ public class enemyAI : MonoBehaviour
 
     void Update()
     {
+
+        List<Transform> checkpoints = pathManager.Instance.Path;
+        print(checkpoints);
         float step = speed * Time.deltaTime;
 
-        checkPoint = CurrCheckpoint.ToString();
-        transform.position = Vector2.MoveTowards(transform.position, GameObject.Find(checkPoint).transform.position, step);
-        if (GameObject.Find(CurrCheckpoint.ToString()).transform.position == transform.position)
+        if (currCheckpoint < checkpoints.Count)
         {
-            CurrCheckpoint += 1;
-        }
-        if (transform.position.x > 11)
-        {
-            Destroy(gameObject);
 
-            if (isLast)
+            transform.position = Vector2.MoveTowards(transform.position, checkpoints[currCheckpoint].position, step);
+
+            if (Vector2.Distance(transform.position, checkpoints[currCheckpoint].position) < 0.01f)
             {
-                SceneManager.LoadScene("winPage");
+                currCheckpoint += 1;
             }
         }
+        else
+        {
+            // Handle reaching the end of the path (optional)
+        }
+    
+        
     }
 }
