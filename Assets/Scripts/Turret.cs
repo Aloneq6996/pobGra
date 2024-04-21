@@ -8,7 +8,7 @@ public class Turret : MonoBehaviour
     public string enemyTag = "enemy";
 
     public Transform shootingPoint;
-    public string audioClipName = "pew"; // Nazwa pliku audio bez rozszerzenia
+    public string audioClipName = "pew";
 
     private float fireCountdown = 0f;
     private List<Transform> enemies = new List<Transform>();
@@ -17,8 +17,7 @@ public class Turret : MonoBehaviour
 
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>(); // Zakładam, że AudioSource jest dołączony do tego samego GameObject co Turret
-        // Find all objects with the specified tag and add them to the list
+        audioSource = gameObject.AddComponent<AudioSource>();
         GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag(enemyTag);
         foreach (var enemyObject in enemyObjects)
         {
@@ -51,12 +50,10 @@ public class Turret : MonoBehaviour
                 float distance = Vector3.Distance(transform.position, enemy.position);
                 if (distance <= range)
                 {
-                    // Raycast or other shooting logic here
-                    // For demonstration, assume a simple damage call
                     EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
                     if (enemyHealth != null)
                     {
-                        enemyHealth.TakeDamage(10); // Adjust damage as needed
+                        enemyHealth.TakeDamage(10);
                         
                         if (audioSource != null && audioClip != null)
                         {
