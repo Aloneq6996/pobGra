@@ -32,8 +32,6 @@ public class TurretPlacer : MonoBehaviour
             _turret = (GameObject)
                 Instantiate(turretPrefab, transform.position, Quaternion.identity);
             _turret.transform.SetParent(parent.transform);
-            Destroy(GameObject.Find("100"));
-            Destroy(GameObject.Find("100_2"));
         }
     }
 
