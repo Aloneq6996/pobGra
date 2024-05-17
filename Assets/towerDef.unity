@@ -24693,26 +24693,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a081c3d25f8e54396b0c278f77e6f6, type: 3}
---- !u!1 &258792904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 843343545590631724, guid: 02a081c3d25f8e54396b0c278f77e6f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 258792903}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &258792905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258792904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee66e460c56d5349a0ae9780d9accfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currCheckpoint: 0
-  speed: 0
 --- !u!1001 &270688695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25697,10 +25677,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -26835,7 +26815,7 @@ GameObject:
   - component: {fileID: 693922917}
   m_Layer: 5
   m_Name: life
-  m_TagString: Untagged
+  m_TagString: life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26871,8 +26851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4121381d8aec0ff4caa62f4ebe960bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 100
-  text: {fileID: 693922915}
+  Life: 0
 --- !u!114 &693922915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26921,8 +26900,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -27374,7 +27353,7 @@ GameObject:
   - component: {fileID: 743400369}
   m_Layer: 5
   m_Name: money
-  m_TagString: Untagged
+  m_TagString: money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27482,7 +27461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money: 200'
+  m_text: 'money: 200'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25682be797933fe46b026acbbe682ea9, type: 2}
   m_sharedMaterial: {fileID: 4322790372429610717, guid: 25682be797933fe46b026acbbe682ea9,
@@ -27510,8 +27489,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -29290,7 +29269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd271f4853cb2da4f8d16baf1d2f262a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfLife: {fileID: 693922914}
+  Life: {fileID: 693922914}
 --- !u!1001 &1503724592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30120,9 +30099,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1af9441b78a40ffb951bcfdcfa443e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 8009152331435415996, guid: 877ef2ea2eff746499f6484f415179b9,
+  objectToSpawn: {fileID: 7079130871477867969, guid: d433d3a6682dccf4c97d998f74bac4aa,
     type: 3}
+  lastToSpawn: {fileID: 0}
   spawnInterval: 0.5
+  last: 0
 --- !u!4 &1951754546
 Transform:
   m_ObjectHideFlags: 0

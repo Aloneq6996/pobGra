@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 10;
+    public int maxHealth = 50;
     private int currentHealth;
+    public moneys moneys;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        // You can add death animation, sound, or any other logic here.
+        moneys.moneyIncrease(20);
         Destroy(gameObject);
     }
 }

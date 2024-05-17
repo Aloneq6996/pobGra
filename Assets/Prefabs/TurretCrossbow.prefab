@@ -132,7 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb7316e68edccc5ca1671abd0dd545b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  fireRate: 1
+  range: 6
+  enemyTag: enemy
+  shootingPoint: {fileID: 0}
 --- !u!58 &-185340641847077130
 CircleCollider2D:
   m_ObjectHideFlags: 0

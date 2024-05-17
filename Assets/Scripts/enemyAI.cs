@@ -6,6 +6,7 @@ public class enemyAI : MonoBehaviour
     public int currCheckpoint = 0;
     public float speed;
 
+
     void Start()
     {
 
@@ -15,7 +16,7 @@ public class enemyAI : MonoBehaviour
     {
 
         List<Transform> checkpoints = pathManager.Instance.Path;
-        print(checkpoints);
+        
         float step = speed * Time.deltaTime;
 
         if (currCheckpoint < checkpoints.Count)
@@ -30,7 +31,7 @@ public class enemyAI : MonoBehaviour
         }
         else
         {
-            // Handle reaching the end of the path (optional)
+            
         }
     
         
