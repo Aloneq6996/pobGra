@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class lastCheckpoint : MonoBehaviour
 {
-    public SelfLife SelfLife;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SelfLife Life;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void OnTriggerEnter(){
-        SelfLife.decreaseLife(1);
+    public void OnTriggerEnter2D(Collider2D other){
+        Life.decreaseLife(5);
+        Destroy(other.gameObject);
     }
 }

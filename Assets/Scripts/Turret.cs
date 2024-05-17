@@ -4,34 +4,27 @@ using System.Collections.Generic;
 public class Turret : MonoBehaviour
 {
     public float fireRate = 1f;
-    public float range = 10f;
+    public float range = 6f;
     public string enemyTag = "enemy";
 
     public Transform shootingPoint;
-    public string audioClipName = "pew";
 
     private float fireCountdown = 0f;
     private List<Transform> enemies = new List<Transform>();
-    private AudioSource audioSource;
-    private AudioClip audioClip;
+
 
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+
+    }
+
+    void Update()
+    {
         GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag(enemyTag);
         foreach (var enemyObject in enemyObjects)
         {
             enemies.Add(enemyObject.transform);
         }
-        audioClip = Resources.Load<AudioClip>("Audio/" + audioClipName);
-        if (audioClip == null)
-        {
-            Debug.LogError("Plik audio nie został znaleziony: " + audioClipName);
-        }
-    }
-
-    void Update()
-    {
         if (fireCountdown <= 0f)
         {
             Shoot();
@@ -53,17 +46,8 @@ public class Turret : MonoBehaviour
                     EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
                     if (enemyHealth != null)
                     {
-                        enemyHealth.TakeDamage(10);
-                        
-                        if (audioSource != null && audioClip != null)
-                        {
-                            audioSource.clip = audioClip;
-                            audioSource.Play();
-                        }
-                        else
-                        {
-                            Debug.LogError("Komponent AudioSource lub Audio Clip nie został poprawnie skonfigurowany.");
-                        }
+                        enemyHealth.TakeDamage(15);
+                        break;
                     }
                 }
             }
